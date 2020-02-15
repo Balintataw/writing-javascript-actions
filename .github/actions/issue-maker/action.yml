@@ -1,0 +1,15 @@
+name: "Issue maker"
+
+description: "consume the output of the previous action and create a new issue in the repository"
+
+inputs:
+  joke:
+    description: "This will become the body of the created issue"
+  issue-title:
+    description: "Every issue needs a title, it's nice to supply one, even though you could do this dynamically within your code"
+    required: true
+    default: "A terrible joke"
+
+runs:
+  using: "node12"
+  main: "main.js"
