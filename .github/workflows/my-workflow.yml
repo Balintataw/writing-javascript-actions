@@ -1,16 +1,20 @@
-# name: JS Actions
+name: JS Actions
 
-# on: [push]
+on: 
+  pull-request: 
+    types: [labeled]
 
-# jobs:
-#  action:
-#    runs-on: ubuntu-latest
-#    steps:
-#    - uses: actions/checkout@v2
-#
-#    - name: hello-action
-#      uses: ./.github/actions/hello-world
-#      with:
-#          first-greeting: "Spock"
-#          third-greeting: "Bones"
+jobs:
+ action:
+   runs-on: ubuntu-latest
+   steps:
+   - uses: actions/checkout@v2
+
+   - name: hello-action
+     uses: ./.github/actions/hello-world
+     with:
+         first-greeting: "Spock"
+         third-greeting: "Bones"
+   - name: tell-joke-action
+     uses: ./.github/actions/joke-action
 
