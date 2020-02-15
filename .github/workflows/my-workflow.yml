@@ -12,4 +12,5 @@ jobs:
       uses: ./.github/actions/hello-world
       with:
           first-greeting: "Spock"
+          third-greeting: "Bones"
 
