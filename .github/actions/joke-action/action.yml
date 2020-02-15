@@ -6,5 +6,5 @@ outputs:
     description: "icanhazdadjokes result"
 
 runs:
-  use: "node12"
+  uses: "node12"
   main: "main.js"
