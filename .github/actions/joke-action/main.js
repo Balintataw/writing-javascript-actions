@@ -3,6 +3,7 @@ const core = require("@actions/core");
 
 async function run() {
   const joke = await getJoke();
+  console.log("LOG", joke);
   core.setOutput("joke-output", joke);
 }
 
