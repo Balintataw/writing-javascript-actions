@@ -26,8 +26,8 @@ jobs:
           repo-token: ${{secrets.GITHUB_TOKEN}}
           joke: ${{steps.jokes.outputs.joke-output}}
       - name: slack-notify
-          uses: mattdavis0351/action-making@master
-          # uses: ./.github/actions/slack-action
+          # uses: mattdavis0351/action-making@master
+          uses: ./.github/actions/slack-action
           with:
 #           channel: action-bot
 #           slackAuth: ${secrets.SLACK_BOT_TOKEN}
