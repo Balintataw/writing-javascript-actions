@@ -12,11 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: hello-action
-        uses: ./.github/actions/hello-world
-        with:
-          first-greeting: "Spock"
-          third-greeting: "Bones"
+#       - name: hello-action
+#         uses: ./.github/actions/hello-world
+#         with:
+#           first-greeting: "Spock"
+#           third-greeting: "Bones"
       - name: tell-joke-action
         uses: ./.github/actions/joke-action
         id: jokes
@@ -25,10 +25,17 @@ jobs:
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
           joke: ${{steps.jokes.outputs.joke-output}}
-      - name: slack-notify
-        # uses: mattdavis0351/action-making@master
-        uses: ./.github/actions/slack-action
+#       - name: slack-notify
+#         # uses: mattdavis0351/action-making@master
+#         uses: ./.github/actions/slack-action
+#         with:
+#           # channel: action-bot
+#           # slackAuth: ${secrets.SLACK_BOT_TOKEN}
+#           repo-token: ${{secrets.GITHUB_TOKEN}}
+      - name: actionBot
+        uses: nsoto92/Hackathon-ActionBot@master
         with:
-          # channel: action-bot
-          # slackAuth: ${secrets.SLACK_BOT_TOKEN}
+          active: true
+          channel: team_hackathon
+          slack-auth: ${{secrets.slack_auth}}
           repo-token: ${{secrets.GITHUB_TOKEN}}
