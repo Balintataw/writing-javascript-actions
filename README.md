@@ -1,2 +1,4 @@
 # writing-javascript-actions-template
-The template repository for the GitHub Actions: Writing JavaScript Actions course on Learning Lab.
+a workflow file for testing actions
+
+create a new pr
